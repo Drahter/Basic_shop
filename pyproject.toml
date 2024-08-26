@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dz-19-2-1"
+version = "0.1.0"
+description = ""
+authors = ["bash"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+poetry = "^1.8.3"
+Django = "^5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
