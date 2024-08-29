@@ -9,7 +9,8 @@ class Category(models.Model):
         return f'{self.name}'
 
     class Meta:
-        pass
+        verbose_name = 'категория'
+        verbose_name_plural = 'категории'
 
 
 class Product(models.Model):
@@ -25,4 +26,5 @@ class Product(models.Model):
         return f'{self.name}, категория {self.category}'
 
     class Meta:
-        pass
+        verbose_name = 'продукт'
+        verbose_name_plural = 'продукты'
