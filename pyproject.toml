@@ -7,6 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+psycopg2 = "^2.9.9"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.4.0"
+ipython = "^8.26.0"
 
 [tool.poetry.group.dev.dependencies]
 poetry = "^1.8.3"
