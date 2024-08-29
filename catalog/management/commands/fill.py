@@ -9,7 +9,7 @@ class Command(BaseCommand):
     @staticmethod
     def json_read_categories():
         categories = []
-        with open('C:/Users/XE/PycharmProjects/DZ-19-2/catalog/fixtures/catalog_data.json', 'r',
+        with open('catalog/fixtures/catalog_data.json', 'r',
                   encoding='utf8') as file:
             data = json.load(file)
             for each in data:
@@ -21,7 +21,7 @@ class Command(BaseCommand):
     @staticmethod
     def json_read_products():
         products = []
-        with open('C:/Users/XE/PycharmProjects/DZ-19-2/catalog/fixtures/catalog_data.json', 'r',
+        with open('catalog/fixtures/catalog_data.json', 'r',
                   encoding='utf8') as file:
             data = json.load(file)
             for each in data:
