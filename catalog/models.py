@@ -6,7 +6,7 @@ class Category(models.Model):
     description = models.TextField(max_length=500, verbose_name='описание', null=True)
 
     def __str__(self):
-        pass
+        return f'{self.name}'
 
     class Meta:
         pass
@@ -18,11 +18,11 @@ class Product(models.Model):
     image = models.ImageField(verbose_name='изображение', null=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     price = models.IntegerField(verbose_name='цена', null=True)
-    created_at = models.DateTimeField(verbose_name='дата создания', null=True)
-    updated_at = models.DateTimeField(verbose_name='дата изменения', null=True)
+    created_at = models.DateTimeField(verbose_name='дата создания', null=True, auto_created=True)
+    updated_at = models.DateTimeField(verbose_name='дата изменения', null=True, auto_now_add=True)
 
     def __str__(self):
-        pass
+        return f'{self.name}, категория {self.category}'
 
     class Meta:
         pass
