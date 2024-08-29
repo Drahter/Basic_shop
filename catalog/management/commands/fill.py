@@ -46,7 +46,8 @@ class Command(BaseCommand):
 
         for product in Command.json_read_products():
             product_for_create.append(
-                Product(name=product['fields']['name'],
+                Product(pk=product['pk'],
+                        name=product['fields']['name'],
                         description=product['fields']['description'],
                         image=product['fields']['image'],
                         category=Category.objects.get(pk=product['fields']['category']),
