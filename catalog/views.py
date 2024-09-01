@@ -5,7 +5,7 @@ from catalog.models import Product
 def product_list(request):
     products = Product.objects.all()
     context = {"products": products}
-    return render(request, 'home.html', context)
+    return render(request, 'products.html', context)
 
 
 def contacts(request):
