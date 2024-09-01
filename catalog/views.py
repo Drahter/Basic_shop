@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from catalog.models import Product
+from catalog.models import Product, Category
 
 
 def product_list(request):
@@ -13,4 +13,6 @@ def contacts(request):
 
 
 def new_product(request):
-    return render(request, 'new_product.html')
+    categories = Category.objects.all()
+    context = {"products": categories}
+    return render(request, 'new_product.html', context)
