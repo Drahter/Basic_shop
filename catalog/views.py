@@ -10,3 +10,7 @@ def product_list(request):
 
 def contacts(request):
     return render(request, 'contacts.html')
+
+
+def new_product(request):
+    return render(request, 'new_product.html')
