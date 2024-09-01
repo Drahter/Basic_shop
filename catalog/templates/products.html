@@ -1,4 +1,5 @@
 {% extends 'home.html' %}
+{% load my_tags %}
 {% block content %}
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
@@ -6,6 +7,7 @@
             {% for product in products %}
             <div class="col">
                 <div class="card shadow-sm">
+                    <img src="{{ product.image | media_filter }}">
                     <div class="card-body">
                         <p class="card-text">{{ product.name }}</p>
                         <p>{{ product.description | truncatechars:100 }}</p>
