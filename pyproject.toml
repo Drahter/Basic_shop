@@ -11,6 +11,7 @@ psycopg2 = "^2.9.9"
 psycopg2-binary = "^2.9.9"
 pillow = "^10.4.0"
 ipython = "^8.26.0"
+django = "^5.1"
 
 [tool.poetry.group.dev.dependencies]
 poetry = "^1.8.3"
