@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, DetailView, CreateView, TemplateView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView, UpdateView
 
 from catalog.models import Product, Category
 
@@ -26,5 +26,7 @@ class ContactsView(TemplateView):
     template_name = 'catalog/contacts.html'
 
 
-def contacts(request):
-    return render(request, 'contacts.html')
+class ProductUpdateView(UpdateView):
+    model = Product
+    fields = ("name", "description", "image", "category", "price")
+    success_url = reverse_lazy("category:prod_list")
