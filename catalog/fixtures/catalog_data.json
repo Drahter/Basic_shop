@@ -22,7 +22,7 @@
       "created_at": null,
       "name": "Banana",
       "description": "A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, cooking bananas are called plantains, distinguishing them from dessert bananas. The fruit is variable in size, color, and firmness, but is usually elongated and curved, with soft flesh rich in starch covered with a peel, which may have a variety of colors when ripe. It grows upward in clusters near the top of the plant. Almost all modern edible seedless (parthenocarp) cultivated bananas come from two wild species – Musa acuminata and Musa balbisiana, or hybrids of them.",
-      "image": "",
+      "image": "bananas.jpg",
       "category": 6,
       "price": 50,
       "updated_at": "2024-08-29T04:23:23.338Z"
@@ -35,7 +35,7 @@
       "created_at": null,
       "name": "Tomato",
       "description": "The tomato is the edible berry of the plant Solanum lycopersicum, commonly known as the tomato plant. The species originated in western South America, Mexico, and Central America. Its domestication and use as a cultivated food may have originated with the indigenous peoples of Mexico. The Aztecs used tomatoes in their cooking at the time of the Spanish conquest of the Aztec Empire, and after the Spanish encountered the tomato for the first time after their contact with the Aztecs, they brought the plant to Europe, in a widespread cultural interchange known as the Columbian exchange. From there, the tomato was introduced to other parts of the European-colonized world during the 16th century. Tomatoes are a significant source of umami flavor. They are consumed in diverse ways: raw or cooked, and in many dishes, sauces, salads, and drinks. While tomatoes are fruits—botanically classified as berries—they are commonly used culinarily as a vegetable ingredient or side dish.",
-      "image": "",
+      "image": "tomato.jpg",
       "category": 6,
       "price": 100,
       "updated_at": "2024-08-29T04:24:14.024Z"
@@ -48,7 +48,7 @@
       "created_at": null,
       "name": "Cucumber",
       "description": "The cucumber (Cucumis sativus) is a widely-cultivated creeping vine plant in the family Cucurbitaceae that bears cylindrical to spherical fruits, which are used as culinary vegetables. Considered an annual plant, there are three main types of cucumber—slicing, pickling, and seedless—within which several cultivars have been created. The cucumber originates in Asia extending from India, Nepal, Bangladesh, China (Yunnan, Guizhou, Guangxi), and Northern Thailand, but now grows on most continents, and many different types of cucumber are grown commercially and traded on the global market. In North America, the term wild cucumber refers to plants in the genera Echinocystis and Marah, though the two are not closely related.",
-      "image": "",
+      "image": "cucumber.jpg",
       "category": 5,
       "price": 70,
       "updated_at": "2024-08-29T04:25:02.872Z"
@@ -61,7 +61,7 @@
       "created_at": null,
       "name": "Pumpkin",
       "description": "A pumpkin is a cultivated winter squash in the genus Cucurbita.The term is most commonly applied to round, orange-colored squash varieties, though it does not possess a scientific definition and may be used in reference to many different squashes of varied appearance.",
-      "image": "",
+      "image": "pumpkin.jpg",
       "category": 5,
       "price": 500,
       "updated_at": "2024-08-29T04:26:30.136Z"
