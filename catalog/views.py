@@ -57,6 +57,12 @@ class BlogArticleDetailView(DetailView):
         return self.object
 
 
+class BlogArticleCreateView(CreateView):
+    model = BlogArticle
+    fields = ("title", "content", "preview_image", "is_published", "views_counter")
+    success_url = reverse_lazy("catalog:blog_list")
+
+
 class BlogArticleUpdateView(UpdateView):
     model = BlogArticle
     fields = ("title", "content", "preview_image", "is_published", "views_counter")

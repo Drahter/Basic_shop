@@ -3,6 +3,13 @@
 {% block content %}
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
+        <h1 class="display-4">Статьи</h1>
+        <a class="btn btn-primary" href="{% url 'catalog:article_create' %}"
+                               role="button">Добавить статью!</a>
+        <p class="lead">Все публичные статьи на сайте:</p>
+        <hr class="my-4">
+    </div>
+    <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {% for article in object_list %}
             {% if article.is_published %}
