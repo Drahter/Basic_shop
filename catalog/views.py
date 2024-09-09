@@ -60,9 +60,9 @@ class BlogArticleDetailView(DetailView):
 class BlogArticleUpdateView(UpdateView):
     model = BlogArticle
     fields = ("title", "content", "preview_image", "is_published", "views_counter")
-    success_url = reverse_lazy("blog:blog_article_list")
+    success_url = reverse_lazy("catalog:blog_list")
 
 
 class BlogArticleDeleteView(DeleteView):
     model = BlogArticle
-    success_url = reverse_lazy("blog:blog_article_list")
+    success_url = reverse_lazy("catalog:blog_list")
