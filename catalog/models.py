@@ -21,6 +21,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='цена', null=True)
     created_at = models.DateTimeField(verbose_name='дата создания', null=True, auto_created=True)
     updated_at = models.DateTimeField(verbose_name='дата изменения', null=True, auto_now_add=True)
+    views_counter = models.PositiveIntegerField(verbose_name='количество просмотров', default=0)
 
     def __str__(self):
         return f'{self.name}, категория {self.category}'
