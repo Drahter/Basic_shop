@@ -1,24 +1,74 @@
 from django.shortcuts import render
-from catalog.models import Product, Category
+from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic import ListView, DetailView, CreateView, TemplateView, UpdateView, DeleteView
+
+from catalog.models import Product, BlogArticle
 
 
-def product_list(request):
-    products = Product.objects.all()
-    context = {"products": products}
-    return render(request, 'products.html', context)
+class ProductListView(ListView):
+    model = Product
+
+    # app_name/<model_name>_<action>
 
 
-def contacts(request):
-    return render(request, 'contacts.html')
+class ProductDetailView(DetailView):
+    model = Product
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.views_counter += 1
+        self.object.save()
+        return self.object
 
 
-def new_product(request):
-    categories = Category.objects.all()
-    context = {"products": categories}
-    return render(request, 'new_product.html', context)
+class ProductCreateView(CreateView):
+    model = Product
+    fields = ("name", "description", "image", "category", "price")
+    success_url = reverse_lazy("catalog:product_list")
 
 
-def product_detail(request, pk):
-    product = Product.objects.get(pk=pk)
-    context = {"product": product}
-    return render(request, 'product_detail.html', context)
+class ContactsView(TemplateView):
+    template_name = 'catalog/contacts.html'
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    fields = ("name", "description", "image", "category", "price")
+    success_url = reverse_lazy("catalog:product_list")
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy("catalog:product_list")
+
+
+class BlogArticleListView(ListView):
+    model = BlogArticle
+
+
+class BlogArticleDetailView(DetailView):
+    model = BlogArticle
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.views_counter += 1
+        self.object.save()
+        return self.object
+
+
+class BlogArticleCreateView(CreateView):
+    model = BlogArticle
+    fields = ("title", "content", "preview_image", "is_published", "views_counter")
+    success_url = reverse_lazy("catalog:blog_list")
+
+
+class BlogArticleUpdateView(UpdateView):
+    model = BlogArticle
+    fields = ("title", "content", "preview_image", "is_published", "views_counter")
+    success_url = reverse_lazy("catalog:blog_list")
+
+
+class BlogArticleDeleteView(DeleteView):
+    model = BlogArticle
+    success_url = reverse_lazy("catalog:blog_list")

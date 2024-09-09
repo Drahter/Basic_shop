@@ -179,7 +179,7 @@
 
 
 <header data-bs-theme="dark">
-{% include 'includes/inc_menu.html' %}
+    {% include 'catalog/includes/inc_menu.html' %}
 </header>
 
 <main>
@@ -190,14 +190,14 @@
                 <h1 class="fw-light">Товары</h1>
                 <p class="lead text-body-secondary">Фрукты и овощи на любой вкус!</p>
                 <p>
-                    <a href="new_product/" class="btn btn-primary my-2">Предложить товар</a>
+                    <a href="{% url 'catalog:new_product'%}" class="btn btn-primary my-2">Предложить товар</a>
                 </p>
             </div>
         </div>
     </section>
 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
 </main>
 
