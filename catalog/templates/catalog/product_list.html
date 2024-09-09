@@ -1,9 +1,10 @@
-{% extends 'home.html' %}
+{% extends 'catalog/home.html' %}
 {% load my_tags %}
 {% block content %}
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for product in products %}
             <div class="col">
                 <div class="card shadow-sm">
                     <img class="card-img-top" src="{{ product.image | media_filter }}">
@@ -17,6 +18,7 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
