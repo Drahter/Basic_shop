@@ -40,3 +40,9 @@ class BlogArticle(models.Model):
     created_at = models.DateTimeField(verbose_name='дата создания', auto_now_add=True)
     is_published = models.BooleanField(verbose_name='опубликовано', default=True)
     views_counter = models.PositiveIntegerField(verbose_name='количество просмотров', default=0)
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = 'статья блога'
+        verbose_name_plural = 'статьи блога'
