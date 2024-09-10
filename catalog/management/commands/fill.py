@@ -72,7 +72,7 @@ class Command(BaseCommand):
                         )
             )
 
-        Product.objects.bulk_create(articles_for_create)
+        Product.objects.bulk_create(product_for_create)
 
         for article in Command.json_read_articles():
             articles_for_create.append(
