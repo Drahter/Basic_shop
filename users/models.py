@@ -9,8 +9,13 @@ class User(AbstractUser):
     phone = models.CharField(max_length=35, verbose_name='Телефон')
     country = models.CharField(max_length=35)
 
+    token = models.CharField(max_length=100, verbose_name='Токен', blank=True, null=True)
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+
+    def __str__(self):
+        return self.email
 
     class Meta:
         verbose_name = 'Пользователь'
