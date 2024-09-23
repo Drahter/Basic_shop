@@ -11,13 +11,12 @@ psycopg2 = "^2.9.9"
 psycopg2-binary = "^2.9.9"
 pillow = "^10.4.0"
 ipython = "^8.26.0"
-django = "^5.1"
 python-slugify = "^8.0.4"
 pytils = "^0.4.1"
+django = "4.2.2"
 
 [tool.poetry.group.dev.dependencies]
 poetry = "^1.8.3"
-Django = "^5.1"
 
 [build-system]
 requires = ["poetry-core"]
