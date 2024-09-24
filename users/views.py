@@ -27,7 +27,7 @@ class RegisterView(CreateView):
             subject='Подтверждение регистрации',
             message=f'Для подтверждения регистрации перейдите по ссылке: {url}',
             from_email=EMAIL_HOST_USER,
-            recipient_list='[user.email]'
+            recipient_list=[user.email]
         )
         return super().form_valid(form)
 

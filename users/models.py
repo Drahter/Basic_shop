@@ -6,8 +6,8 @@ class User(AbstractUser):
     username = None
     email = models.EmailField(unique=True, verbose_name='Электронная почта')
     avatar = models.ImageField(upload_to='users/users_avatars/', blank=True, null=True, verbose_name='Аватар')
-    phone = models.CharField(max_length=35, verbose_name='Телефон')
-    country = models.CharField(max_length=35)
+    phone = models.CharField(max_length=35, verbose_name='Телефон', blank=True, null=True)
+    country = models.CharField(max_length=35, blank=True, null=True, verbose_name='Страна')
 
     token = models.CharField(max_length=100, verbose_name='Токен', blank=True, null=True)
 
