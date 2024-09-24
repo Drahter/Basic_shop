@@ -14,7 +14,6 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-
     name = models.CharField(max_length=50, verbose_name='наименование', null=True)
     description = models.TextField(max_length=500, verbose_name='описание', null=True)
     image = models.ImageField(verbose_name='изображение', null=True)
@@ -43,6 +42,7 @@ class BlogArticle(models.Model):
 
     def __str__(self):
         return self.title
+
     class Meta:
         verbose_name = 'статья блога'
         verbose_name_plural = 'статьи блога'
