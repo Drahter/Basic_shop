@@ -1,5 +1,7 @@
 from django.db import models
 
+from users.models import User
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50, verbose_name='наименование')
@@ -22,6 +24,9 @@ class Product(models.Model):
     created_at = models.DateTimeField(verbose_name='дата создания', null=True, auto_created=True)
     updated_at = models.DateTimeField(verbose_name='дата изменения', null=True, auto_now_add=True)
     views_counter = models.PositiveIntegerField(verbose_name='количество просмотров', default=0)
+
+    creator = models.ForeignKey(User, verbose_name='Автор', help_text='Укажите автора товара', null=True, blank=True,
+                                on_delete=models.SET_NULL)
 
     def __str__(self):
         return f'{self.name}, категория {self.category}'
