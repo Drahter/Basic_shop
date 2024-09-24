@@ -4,7 +4,7 @@
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
         <h1 class="display-4">Статьи</h1>
-        <a class="btn btn-primary" href="{% url 'catalog:article_create' %}"
+        <a class="btn btn-primary" href="{% url 'blog:article_create' %}"
                                role="button">Добавить статью!</a>
         <p class="lead">Все публичные статьи на сайте:</p>
         <hr class="my-4">
@@ -22,11 +22,11 @@
                         <small class="text-body-secondary">Дата публикации: {{ article.published_at }}</small>
                         <small class="text-body-secondary">Количество просмотров: {{ article.views_counter}}</small>
                         <div class="btn-group">
-                            <a class="btn btn-primary" href="{% url 'catalog:article_detail' article.pk %}"
+                            <a class="btn btn-primary" href="{% url 'blog:article_detail' article.pk %}"
                                role="button">Посмотреть</a>
-                            <a class="btn btn-primary" href="{% url 'catalog:article_update' article.pk %}"
+                            <a class="btn btn-primary" href="{% url 'blog:article_update' article.pk %}"
                                role="button">Редактировать</a>
-                            <a class="btn btn-primary" href="{% url 'catalog:article_delete' article.pk %}"
+                            <a class="btn btn-primary" href="{% url 'blog:article_delete' article.pk %}"
                                role="button">Удалить</a>
                         </div>
                     </div>

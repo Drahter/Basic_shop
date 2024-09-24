@@ -10,10 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterModelOptions(
-            name='blogarticle',
-            options={'verbose_name': 'статья блога', 'verbose_name_plural': 'статьи блога'},
-        ),
         migrations.AlterField(
             model_name='product',
             name='description',

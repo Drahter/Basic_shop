@@ -10,17 +10,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='BlogArticle',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=150, verbose_name='заголовок')),
-                ('slug', models.CharField(max_length=150, verbose_name='слаг')),
-                ('content', models.TextField(verbose_name='содержание')),
-                ('preview_image', models.ImageField(upload_to='', verbose_name='изображение')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='дата создания')),
-                ('is_published', models.BooleanField(default=True, verbose_name='опубликовано')),
-                ('views_counter', models.PositiveIntegerField(default=0, verbose_name='количество просмотров')),
-            ],
-        ),
+
     ]
