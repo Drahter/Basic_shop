@@ -189,9 +189,11 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Товары</h1>
                 <p class="lead text-body-secondary">Фрукты и овощи на любой вкус!</p>
+                {% if user.is_authenticated %}
                 <p>
                     <a href="{% url 'catalog:new_product'%}" class="btn btn-primary my-2">Предложить товар</a>
                 </p>
+                {% endif %}
             </div>
         </div>
     </section>
