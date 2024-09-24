@@ -1,7 +1,8 @@
 from django.core.management import BaseCommand
 import json
 
-from catalog.models import Product, Category, BlogArticle
+from blog.models import BlogArticle
+from catalog.models import Product, Category
 
 
 class Command(BaseCommand):

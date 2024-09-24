@@ -15,9 +15,9 @@
                             <small class="text-body-secondary">Количество просмотров: {{ object.views_counter }}</small>
                         </div>
                         <div class="btn-group">
-                            <a class="btn btn-primary" href="{% url 'catalog:article_update' object.pk %}"
+                            <a class="btn btn-primary" href="{% url 'blog:article_update' object.pk %}"
                                role="button">Редактировать</a>
-                            <a class="btn btn-primary" href="{% url 'catalog:article_delete' object.pk %}"
+                            <a class="btn btn-primary" href="{% url 'blog:article_delete' object.pk %}"
                                role="button">Удалить</a>
                         </div>
                     </div>
