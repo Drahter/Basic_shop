@@ -53,7 +53,8 @@ class Command(BaseCommand):
 
         for category in Command.json_read_categories():
             category_for_create.append(
-                Category(pk=category['pk'], name=category['fields']['name'], description=category['fields']['description'])
+                Category(pk=category['pk'], name=category['fields']['name'],
+                         description=category['fields']['description'])
             )
 
         Category.objects.bulk_create(category_for_create)
@@ -77,15 +78,15 @@ class Command(BaseCommand):
         for article in Command.json_read_articles():
             articles_for_create.append(
                 BlogArticle(pk=article['pk'],
-                        title=article['fields']['title'],
-                        content=article['fields']['content'],
-                        created_at=article['fields']['created_at'],
-                        preview_image=article['fields']['preview_image'],
-                        slug=article['fields']['slug'],
-                        is_published=article['fields']['is_published'],
-                        views_counter=article['fields']['views_counter']
+                            title=article['fields']['title'],
+                            content=article['fields']['content'],
+                            created_at=article['fields']['created_at'],
+                            preview_image=article['fields']['preview_image'],
+                            slug=article['fields']['slug'],
+                            is_published=article['fields']['is_published'],
+                            views_counter=article['fields']['views_counter']
 
-                        )
+                            )
             )
 
         BlogArticle.objects.bulk_create(articles_for_create)

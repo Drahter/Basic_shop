@@ -11,8 +11,12 @@
                 <ul class="list-unstyled">
                     <li><a href="{% url 'catalog:product_list' %}" class="text-white">Главная</a></li>
                     <li><a href="{% url 'catalog:blog_list' %}" class="text-white">Наш блог!</a></li>
-                    <li><a href="#" class="text-white">Вход</a></li>
-                    <li><a href="#" class="text-white">Регистрация</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'users:logout' %}" class="text-white">Выйти</a></li>
+                    {% else %}
+                    <li><a href="{% url 'users:login' %}" class="text-white">Войти</a></li>
+                    <li><a href="{% url 'users:register' %}" class="text-white">Регистрация</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
