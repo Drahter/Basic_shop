@@ -25,8 +25,10 @@
                         <div class="btn-group">
                             <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}"
                                role="button">Посмотреть</a>
+                            {% if perms.product.can_edit_description and perms.product.can_edit_is_active and perms.product.can_edit_category or user == product.creator %}
                             <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}"
                                role="button">Редактировать</a>
+                            {% endif %}
                             <a class="btn btn-primary" href="{% url 'catalog:product_delete' product.pk %}"
                                role="button">Удалить</a>
                         </div>
