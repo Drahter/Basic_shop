@@ -5,6 +5,7 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {% for product in object_list %}
+            {% if product.is_active %}
             <div class="col">
                 <div class="card shadow-sm">
                     <img class="card-img-top" src="{{ product.image | media_filter }}">
@@ -25,14 +26,17 @@
                         <div class="btn-group">
                             <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}"
                                role="button">Посмотреть</a>
+                            {% if perms.catalog.can_edit_description and perms.catalog.can_edit_is_active and perms.catalog.can_edit_category or user == product.creator %}
                             <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}"
                                role="button">Редактировать</a>
+                            {% endif %}
                             <a class="btn btn-primary" href="{% url 'catalog:product_delete' product.pk %}"
                                role="button">Удалить</a>
                         </div>
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>

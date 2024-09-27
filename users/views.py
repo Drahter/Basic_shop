@@ -27,7 +27,7 @@ class RegisterView(CreateView):
         user.is_active = False
         token = secrets.token_hex(16)
         user.token = token
-        user.save()
+        user.save(update_fields=['token', 'is_active'])
         host = self.request.get_host()
         url = f'/http://{host}/users/email-confirm/{token}/'
         send_mail(
