@@ -24,6 +24,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(verbose_name='дата создания', null=True, auto_created=True)
     updated_at = models.DateTimeField(verbose_name='дата изменения', null=True, auto_now_add=True)
     views_counter = models.PositiveIntegerField(verbose_name='количество просмотров', default=0)
+    is_active = models.BooleanField(verbose_name='опубликован', default=False)
 
     creator = models.ForeignKey(User, verbose_name='Автор', help_text='Укажите автора товара', null=True, blank=True,
                                 on_delete=models.SET_NULL)
@@ -34,6 +35,11 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
+        permissions = [
+            ('can_edit_description', 'Can edit description'),
+            ('can_edit_is_active', 'Can hide products'),
+            ('can_edit_category', 'Can change category'),
+        ]
 
 
 class Version(models.Model):
